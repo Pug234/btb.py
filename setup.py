@@ -6,7 +6,7 @@ with open("README.md", "r") as f:
 setup(
   name = 'btbpug',
   packages = ['btbpug'],
-  version = '1.1',
+  version = '1.1.1',
   license='MIT',
   description = 'A feature rich API to interact with the BttesToBits API',
   author = 'Corbin McKEe',
