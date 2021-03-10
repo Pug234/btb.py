@@ -45,10 +45,10 @@ Returns the contents of SpeedText() as a string
   image(text, backgroundColor, textColor)
 `
 
-Returns the contents of SpeedText() as a image
+Returns the contents of SpeedText() as an image
 
 **Parameters**
- - text(Optional[str]) Overrides the random text and replaces it with inputed text.
+ - text(Optional[str]) Overrides the random text and replaces it with inputted text.
  - backgroundColor(Optional[str]) Sets the background color of the image ('blue', 'green', 'black', etc)
  - textColor(Optional[str]) Sets the text color of the image ('blue', 'green', 'black', etc)
 
@@ -69,18 +69,18 @@ Returns the contents of SpeedText() as a image
 
 `class MadLibs(random, title, variables, text, questions)`
 
-Represents a Madlibs and it's variables
+Represents a Madlib and its variables
 
 **Parameters**
- - random(Optional[bool]) Defults to true, if set to false uses custom madlibs
- - title(Optional[str]) title of the madlibs; required if random is set to false
+ - random(Optional[bool]) Defults to true. If set to false, it uses custom a madlib
+ - title(Optional[str]) title of the madlib; required if random is set to false
  - variables(Optional[list/tuple]) A list of inputs you want from the user (Ex: ['noun', 'adverb']); required if random is set to false
- - text(Optional[str]) The text for the madlibs, replace anywhere you want your variables to go with {variable index}; required if random is set to false
+ - text(Optional[str]) The text for the madlib. Replace anywhere you want your variables to go with {variable_index}; required if random is set to false
  - questions(Optional[int])
 
  `questions()`
 
-Returns the questions of the madlibs (Ex: ['verb', 'noun', 'place'])
+Returns the questions of the madlib (Ex: ['verb', 'noun', 'place'])
 
 `convert(answers)`
 
@@ -93,15 +93,15 @@ Returns the madlibs with all of the questions({number}) filled out
 
 `class btbpug.reddit(subreddit, limit)`
 
-Represents a list of reddit post(s)
+Represents a list of reddit posts
 
 **Parameters**
- - subreddit[str] The subreddit you want to pull post from.
- - limit[Optional(int)] The number of post you want to pull from the subreddit, defaults to 1.
+ - subreddit[str] The subreddit you want to pull posts from.
+ - limit[Optional(int)] The number of posts you want to pull from the subreddit, defaults to 1.
 
  `raw()`
 
-Returns the full list of post
+Returns the full list of posts
 
 `post(index)`
 
@@ -117,19 +117,19 @@ Returns one post from the list
 Represents a random meme
 
 `title`
-Returns the title of the reddit post the meme was gotten from as a string
+Returns the title of the reddit post the meme is from as a string
 
 `link`
-Returns a link to the reddit post the meme was gotten from as a string
+Returns a link to the reddit post of the meme as a string
 
 `image`
-Returns the url of the memes image as a string
+Returns the url of the meme's image as a string
 
 `comments`
-Returns the amount of comments of the post as a integer
+Returns the amount of comments the post has as an integer
 
 `score`
 Returns the score of the reddit post the meme is from as a list (Ex: [upvotes, downvotes])
 
 `raw()`
-Returns the information as gotten from the API as a dictionary
+Returns the information from the API as a dictionary
