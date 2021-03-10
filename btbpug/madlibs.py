@@ -2,28 +2,27 @@ import requests
 from typing import Union
 #Ill add support for custom madlibs when I feel like it
 class MadLibs:
-    def __init__(self, random:bool=True, text:str=None, title:str=None, variables:list=None):
+    def __init__(self, random:bool=True, title:str=None, variables:Union[tuple, list]=None, text:str=None, questions:int=None):
 
-        if random == False and not isinstance(variables, list):
-            raise TypeError('Object "variables" must be type list')
-
-        if text == None:
-            raise TypeError("Missing argument text")
-
-        if title == None:
-            raise TypeError("Missing argument title")
-
-        if random == True:
+        if random:
             self.madlib = requests.get("https://api.bytestobits.dev/madlibs").json()
             self.title = self.madlib['title']
-            self.vars = self.vars = self.madlib['variables']
-            self.q = self.madlib['questions']
+            self.variables = self.vars = self.madlib['variables']
+            self.questions = self.madlib['questions']
             self.text = self.madlib['text']
+
         else:
-            self.madlib = {"title": title, "variables": variables, "text": text, "questions": len(variables)}
+            if not (title and variables and text and questions):
+                raise ValueError("Missing Required Parameters. Must include 'title', 'variables', 'text', 'questions'")
+            self.madlib = {
+                "title": title,
+                "variables": variables,
+                "text": text,
+                "questions": questions
+            }
             self.text = text
-            self.q = len(variables)
-            self.vars = variables
+            self.questions = questions
+            self.variables = variables
             self.title = title
 
     def questions(self):
@@ -35,6 +34,3 @@ class MadLibs:
             print(1)
             text = text.replace("{" + str(i) + "}", answers[i])
         return text
-
-    def raw(self):
-        return self.madlib
