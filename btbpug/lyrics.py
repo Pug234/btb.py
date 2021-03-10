@@ -1,5 +1,6 @@
 import requests
 
+
 def lyrics(self, song: str, artist: str = None):
     song = song.replace(" ", "+")
 
@@ -13,6 +14,6 @@ def lyrics(self, song: str, artist: str = None):
 
     if song == {"GeniusError": "Not Found"}:
         raise TypeError("GeniusError: Song not found")
-        
+
 
     return song
