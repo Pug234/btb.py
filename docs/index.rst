@@ -14,7 +14,7 @@ Installing
 
 To install btbpug from PyPI::
 
-python3 -m pip install -U discord.py
+  python3 -m pip install -U discord.py
 
 
 Usage
@@ -24,5 +24,5 @@ Now that you have installed btbpug, lets start writing some code to see what we 
 
 Lets start simple by just returning a word::
 
-import btbpug as btb
-print()
+  import btbpug as btb
+  print()
