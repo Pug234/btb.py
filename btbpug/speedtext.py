@@ -10,9 +10,13 @@ class SpeedText:
     def text(self):
         return self.speedtext
 
-    @property
-    def image(self, backgroundColor:str='white', textColor:str='black'):
-        lines = textwrap.wrap(self.speedtext, width=60)
+    def image(self, text:str=None, backgroundColor:str='white', textColor:str='black'):
+        if text == None:
+            speedtext = self.speedtext
+        else:
+            speedtext = text
+
+        lines = textwrap.wrap(speedtext, width=60)
 
         img = Image.new('RGB', (600, (len(lines) * 25 + 15)), backgroundColor)
         draw = ImageDraw.Draw(img)

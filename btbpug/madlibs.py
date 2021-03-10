@@ -1,6 +1,6 @@
 import requests
 from typing import Union
-#Ill add support for custom madlibs when I feel like it
+
 class MadLibs:
     def __init__(self, random:bool=True, title:str=None, variables:Union[tuple, list]=None, text:str=None, questions:int=None):
 

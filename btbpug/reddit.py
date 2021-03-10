@@ -13,5 +13,5 @@ class reddit:
     def raw(self):
         return self.r
 
-    def post(self, number:int):
-        return self.r[number]
+    def post(self, index:int):
+        return self.r[index]
