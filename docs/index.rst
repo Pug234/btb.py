@@ -25,4 +25,7 @@ Now that you have installed btbpug, lets start writing some code to see what we 
 Lets start simple by just returning a word::
 
   import btbpug as btb
-  print()
+  print(btb.word())
+  #citifications
+
+Great, that all worked! For information on what you can do with this library look though the rest of the documentations. For more examples of using this library check out `Examples <https://api.bytestobits.dev/>``
