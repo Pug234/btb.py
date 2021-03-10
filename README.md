@@ -27,4 +27,4 @@ Lets start simple by just returning a word
   #citifications
 ```
 
-Great, that all worked! For information on what you can do with this library look though the rest of the documentations. For more examples of using this library check out [Examples](https://github.com/Pug234/btb.py/tree/main/examples) vist the rest of the [documentation](https://github.com/Pug234/btb.py/blob/main/docs/documentaion.md)
+Great, that all worked! For information on what you can do with this library look though the rest of the documentations. For more examples of using this library check out [Examples](https://github.com/Pug234/btb.py/tree/main/examples), you can also vist the rest of the [documentation](https://github.com/Pug234/btb.py/blob/main/docs/documentaion.md)
