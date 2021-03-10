@@ -16,9 +16,9 @@ Returns a random word as a string.
 ## Lyrics
 
 
-```
+`
   btbpug.lyrics(song, artist)
-```
+`
 
 Returns the lyrics to a song as a string.
 
@@ -29,21 +29,21 @@ Returns the lyrics to a song as a string.
 ## Speed text
 
 
-```
+`
   class btbpug.SpeedText()
-```
+`
 
 Represents a random paragraph of text
 
-```
+`
   text
-```
+`
 
 Returns the contents of SpeedText() as a string
 
-```
+`
   image
-```
+`s
 
 Returns the contents of SpeedText() as a image
 
