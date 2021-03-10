@@ -28,4 +28,4 @@ Lets start simple by just returning a word::
   print(btb.word())
   #citifications
 
-Great, that all worked! For information on what you can do with this library look though the rest of the documentations. For more examples of using this library check out `Examples <https://github.com/Pug234/btb.py/tree/main/examples>'_
+Great, that all worked! For information on what you can do with this library look though the rest of the documentations. For more examples of using this library check out `Examples <https://github.com/Pug234/btb.py/tree/main/examples>`_
