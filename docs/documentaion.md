@@ -74,7 +74,7 @@ Represents a Madlibs and it's variables
 **Parameters**
  - random(Optional[bool]) Defults to true, if set to false uses custom madlibs
  - title(Optional[str]) title of the madlibs; required if random is set to false
- - variables(Optional[list/tuple]) A list of inputs you want from the user (Ex: ['noun', ['adverb']]); required if random is set to false
+ - variables(Optional[list/tuple]) A list of inputs you want from the user (Ex: ['noun', 'adverb']); required if random is set to false
  - text(Optional[str]) The text for the madlibs, replace anywhere you want your variables to go with {variable index}; required if random is set to false
  - questions(Optional[int])
 
