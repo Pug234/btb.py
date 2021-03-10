@@ -1,4 +1,4 @@
 import requests
 
-def word(self):
+def word():
     return requests.get('https://api.bytestobits.dev/word').json()

@@ -1,7 +1,7 @@
 import requests
 
 
-def lyrics(self, song: str, artist: str = None):
+def lyrics(song: str, artist: str = None):
     song = song.replace(" ", "+")
 
     song = f'https://api.bytestobits.dev/lyrics/?song={song}'
