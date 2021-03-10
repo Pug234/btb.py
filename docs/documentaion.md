@@ -1,23 +1,24 @@
-====================
-btbpug Documentation
-====================
+# btbpug Documentation
+
 
 Welcome to the btbpug docs, here is where you will find all the information about btbpug.
 
 
-Word
-====
+## Word
 
-::
+
+```
   btbpug.word()
+```
 
 Returns a random word as a string.
 
-Lyrics
-======
+## Lyrics
 
-::
+
+```
   btbpug.lyrics(song, artist)
+```
 
 Returns the lyrics to a song as a string.
 
@@ -25,27 +26,30 @@ Returns the lyrics to a song as a string.
  - song[str] The title of the song
  - artist(Optional[str]) The artist of the song (Recommended; increases accuracy)
 
- Speed text
- ==========
+## Speed text
 
- ::
+
+```
   class btbpug.SpeedText()
+```
 
 Represents a random paragraph of text
 
-::
+```
   text
+```
 
 Returns the contents of SpeedText() as a string
 
-::
+```
   image
+```
 
 Returns the contents of SpeedText() as a image
 
 **Example**
 
-::
+```
   import btbpug as btb
   speedText = btb.SpeedText()
 
@@ -54,3 +58,4 @@ Returns the contents of SpeedText() as a image
 
   sp.image.save("speedText.png")
   #Saves an image of the text as a png
+```
