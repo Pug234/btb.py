@@ -65,7 +65,7 @@ Returns the contents of SpeedText() as an image
   #Saves an image of the text as a png
 ```
 
-## madlibs.py
+## madlibs
 
 `class MadLibs(random, title, variables, text, questions)`
 
