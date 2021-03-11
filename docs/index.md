@@ -5,6 +5,7 @@ btbpug is a feature rich way to interact with the [BytesToBits API](https://api.
 ## Getting started
 
 A guide on how to get btbpug up and running
+First things first you will need a API token go to https://api.bytestobits.dev/account/ and sign up. Once you have your API token we can get started on installing the wrapper
 
 ### Installing
 
@@ -22,9 +23,10 @@ Now that you have installed btbpug, lets start writing some code to see what we 
 Lets start simple by just returning a word
 
 ```
-  import btbpug as btb
+  import btbpug
+  btb = btbpug.client(token=YOUR_TOKEN)
   print(btb.word())
   #citifications
 ```
 
-Great, that all worked! For information on what you can do with this library look though the rest of the documentations. For more examples of using this library check out [Examples](https://github.com/Pug234/btb.py/tree/main/examples), vist the rest of the [documentation](https://github.com/Pug234/btb.py/blob/main/docs/documentaion.md)
+Great, that all worked! For information on what you can do with this library look though the rest of the [documentation](https://github.com/Pug234/btb.py/blob/main/docs/documentaion.md). For more examples of using this library check out [Examples](https://github.com/Pug234/btb.py/tree/main/examples).

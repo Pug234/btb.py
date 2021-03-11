@@ -3,12 +3,21 @@
 
 Welcome to the btbpug docs, here is where you will find all the information about btbpug.
 
+## Client
+
+`class btbpug.client(token)`
+
+As of a new BytesToBits API update you now require tokens, client is a way for the wrapper to keep track of you and your token. (making more then 50 request per minutes to the API will get you rate limited)
+
+**Parameters**
+ - token[str] An API token that can make gotten from https://api.bytestobits.dev/account/
+
 
 ## Word
 
 
 ```
-  btbpug.word()
+  btbpug.client().word()
 ```
 
 Returns a random word as a string.
@@ -17,7 +26,7 @@ Returns a random word as a string.
 
 
 `
-  btbpug.lyrics(song, artist)
+  btbpug.client().lyrics(song, artist)
 `
 
 Returns the lyrics to a song as a string.
@@ -30,7 +39,7 @@ Returns the lyrics to a song as a string.
 
 
 `
-  class btbpug.SpeedText()
+  class btbpug.client().SpeedText()
 `
 
 Represents a random paragraph of text
@@ -51,19 +60,6 @@ Returns the contents of SpeedText() as an image
  - text(Optional[str]) Overrides the random text and replaces it with inputted text.
  - backgroundColor(Optional[str]) Sets the background color of the image ('blue', 'green', 'black', etc)
  - textColor(Optional[str]) Sets the text color of the image ('blue', 'green', 'black', etc)
-
-**Example**
-
-```
-  import btbpug as btb
-  speedText = btb.SpeedText()
-
-  print(speedText.text)
-  #The example of painting can teach us not only how to manage our own work, but how to work together. A lot of the great art of the past is the work of multiple hands, though there may only be one name on the wall next to it in the museum.
-
-  sp.image.save("speedText.png")
-  #Saves an image of the text as a png
-```
 
 ## madlibs
 
@@ -91,7 +87,7 @@ Returns the madlibs with all of the questions({number}) filled out
 
 ## reddit
 
-`class btbpug.reddit(subreddit, limit)`
+`class btbpug.client().reddit(subreddit, limit)`
 
 Represents a list of reddit posts
 
@@ -112,9 +108,11 @@ Returns one post from the list
 
 ## meme
 
-`class btbpug.meme()`
+`class btbpug.client().meme()`
 
 Represents a random meme
+
+**WARNING**: MEME ENDPOINT IS CURRENTLY EXTREMELY SLOW, RESULTS WILL TAKE A LONG TIME TO RETURN
 
 `title`
 Returns the title of the reddit post the meme is from as a string

@@ -1,19 +1,18 @@
 import requests
 
+def lyrics(token, song: str, artist: str = None):
+  song = song.replace(" ", "+")
 
-def lyrics(song: str, artist: str = None):
-    song = song.replace(" ", "+")
+  song = f'https://api.bytestobits.dev/lyrics/?song={song}'
 
-    song = f'https://api.bytestobits.dev/lyrics/?song={song}'
+  if artist != None:
+      artist = artist.replace(" ", "+")
+      song += f'&artist={artist}'
 
-    if artist != None:
-        artist = artist.replace(" ", "+")
-        song += f'&artist={artist}'
+  song = requests.get(song, headers=token).json()
 
-    song = requests.get(song).json()
-
-    if song == {"GeniusError": "Not Found"}:
-        raise TypeError("GeniusError: Song not found")
+  if song == {"GeniusError": "Not Found"}:
+      raise TypeError("GeniusError: Song not found")
 
 
-    return song
+  return song

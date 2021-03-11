@@ -1,8 +1,8 @@
 import requests
 
 class meme:
-    def __init__(self):
-        self.r = requests.get(f"https://api.bytestobits.dev/meme/").json()
+    def __init__(self, token):
+        self.r = requests.get(f"https://api.bytestobits.dev/meme/", headers=token).json()
 
     @property
     def title(self):

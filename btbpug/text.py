@@ -2,21 +2,24 @@ from PIL import Image, ImageFont, ImageDraw
 import textwrap
 import requests
 
-class SpeedText:
-    def __init__(self):
-        self.speedtext = requests.get('https://api.bytestobits.dev/speedtext2/').json()
+class Text:
+    def __init__(self, token):
+    
+        self.rantext = requests.get('https://api.bytestobits.dev/text/', headers=token).json()
+
 
     @property
     def text(self):
-        return self.speedtext
+        return self.rantext
 
     def image(self, text:str=None, backgroundColor:str='white', textColor:str='black'):
         if text == None:
-            speedtext = self.speedtext
+            text = self.rantext
         else:
-            speedtext = text
+            text = text
 
-        lines = textwrap.wrap(speedtext, width=60)
+
+        lines = textwrap.wrap(text, width=60)
 
         img = Image.new('RGB', (600, (len(lines) * 25 + 15)), backgroundColor)
         draw = ImageDraw.Draw(img)
