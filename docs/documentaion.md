@@ -1,11 +1,11 @@
-# btbpug Documentation
+# btbpython Documentation
 
 
-Welcome to the btbpug docs, here is where you will find all the information about btbpug.
+Welcome to the btbpython docs, here is where you will find all the information about btbpython.
 
 ## Client
 
-`class btbpug.client(token)`
+`class btbpython.client(token)`
 
 As of a new BytesToBits API update you now require tokens, client is a way for the wrapper to keep track of you and your token. (making more then 50 request per minutes to the API will get you rate limited)
 
@@ -17,7 +17,7 @@ As of a new BytesToBits API update you now require tokens, client is a way for t
 
 
 ```
-  btbpug.client().word()
+  btbpython.client().word()
 ```
 
 Returns a random word as a string.
@@ -26,7 +26,7 @@ Returns a random word as a string.
 
 
 `
-  btbpug.client().lyrics(song, artist)
+  btbpython.client().lyrics(song, artist)
 `
 
 Returns the lyrics to a song as a string.
@@ -39,7 +39,7 @@ Returns the lyrics to a song as a string.
 
 
 `
-  class btbpug.client().SpeedText()
+  class btbpython.client().SpeedText()
 `
 
 Represents a random paragraph of text
@@ -87,7 +87,7 @@ Returns the madlibs with all of the questions({number}) filled out
 
 ## reddit
 
-`class btbpug.client().reddit(subreddit, limit)`
+`class btbpython.client().reddit(subreddit, limit)`
 
 Represents a list of reddit posts
 
@@ -108,7 +108,7 @@ Returns one post from the list
 
 ## meme
 
-`class btbpug.client().meme()`
+`class btbpython.client().meme()`
 
 Represents a random meme
 

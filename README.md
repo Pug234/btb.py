@@ -1,28 +1,28 @@
-# Welcome to btbpug
+# Welcome to btbpython
 
-btbpug is a feature rich way to interact with the [BytesToBits API](https://api.bytestobits.dev/)
+btbpython is a feature rich way to interact with the [BytesToBits API](https://api.bytestobits.dev/)
 
 ## Getting started
 
-A guide on how to get btbpug up and running
+A guide on how to get btbpython up and running
 
 ### Installing
 
 
-To install btbpug from PyPI use
+To install btbpython from PyPI use
 
-`python3 -m pip install -U discord.py`
+`python3 -m pip install -U btbpython`
 
 
 ### Usage
 
 
-Now that you have installed btbpug, lets start writing some code to see what we can do with it
+Now that you have installed btbpython, lets start writing some code to see what we can do with it
 
 Lets start simple by just returning a word
 
 ```
-  import btbpug as btb
+  import btbpython as btb
   print(btb.word())
   #citifications
 ```

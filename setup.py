@@ -4,8 +4,8 @@ with open("README.md", "r") as f:
   readme = f.read()
 
 setup(
-  name = 'btb.py',
-  packages = ['btb.py'],
+  name = 'btbpython',
+  packages = ['btbpython'],
   version = '2.1.1',
   license='MIT',
   description = 'A feature rich API to interact with the BttesToBits API',
