@@ -9,5 +9,4 @@ async def request(url, token):
     if r.status == 429:
       raise Exception(f'API response: {r.status_code}: To many request')
 
-
     return await r.json()
