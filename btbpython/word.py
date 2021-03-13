@@ -1,5 +1,5 @@
-import requests
+from .request import request
 
 def word(token):
 
-    return requests.get('https://api.bytestobits.dev/word', headers=token).json()
+    return request("https://api.bytestobits.dev/word", token)

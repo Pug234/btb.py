@@ -1,12 +1,10 @@
 from PIL import Image, ImageFont, ImageDraw
 import textwrap
-import requests
+from .request import request
 
 class Text:
     def __init__(self, token):
-    
-        self.rantext = requests.get('https://api.bytestobits.dev/text/', headers=token).json()
-
+        self.rantext = request('https://api.bytestobits.dev/text/', token)
 
     @property
     def text(self):

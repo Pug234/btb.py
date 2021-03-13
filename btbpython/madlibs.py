@@ -1,12 +1,13 @@
 import requests
 from typing import Union
+from .request import request
 
 class madlibs:
     def __init__(self, random:bool=True, title:str=None, variables:Union[tuple, list]=None, text:str=None, questions:int=None, token:str=None):
         self.token = token
 
         if random:
-            self.madlib = requests.get("https://api.bytestobits.dev/madlibs", headers=self.token).json()
+            self.madlib = request("https://api.bytestobits.dev/madlibs", self.token)
 
             self.title = self.madlib['title']
             self.variables = self.vars = self.madlib['variables']

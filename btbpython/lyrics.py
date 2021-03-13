@@ -1,4 +1,5 @@
 import requests
+from .request import request
 
 def lyrics(token, song: str, artist: str = None):
   song = song.replace(" ", "+")
@@ -9,7 +10,7 @@ def lyrics(token, song: str, artist: str = None):
       artist = artist.replace(" ", "+")
       song += f'&artist={artist}'
 
-  song = requests.get(song, headers=token).json()
+  song = request(song, token)
 
   if song == {"GeniusError": "Not Found"}:
       raise TypeError("GeniusError: Song not found")
