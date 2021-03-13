@@ -1,11 +1,14 @@
 import requests
 from typing import Union
-#Ill add support for custom madlibs when I feel like it
-class MadLibs:
-    def __init__(self, random:bool=True, title:str=None, variables:Union[tuple, list]=None, text:str=None, questions:int=None):
+from .request import request
+
+class madlibs:
+    def __init__(self, random:bool=True, title:str=None, variables:Union[tuple, list]=None, text:str=None, questions:int=None, token:str=None):
+        self.token = token
 
         if random:
-            self.madlib = requests.get("https://api.bytestobits.dev/madlibs").json()
+            self.madlib = request("https://api.bytestobits.dev/madlibs", self.token)
+
             self.title = self.madlib['title']
             self.variables = self.vars = self.madlib['variables']
             self.questions = self.madlib['questions']
@@ -25,7 +28,7 @@ class MadLibs:
             self.variables = variables
             self.title = title
 
-    def questions(self):
+    def questionList(self):
         return tuple(self.vars)
 
     def convert(self, answers:Union[list, tuple]):

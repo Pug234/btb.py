@@ -1,15 +1,13 @@
-from btb import BytesToBits
-btb = BytesToBits()
+import btbpython, asyncio
+client = btbpython.asyncClient("")
 
-#print(btb.word())
+async def test():
+    word = await client.word()
+    print(word)
 
-#print(btb.lyrics(song="My ", artist='AJR'))
+loop = asyncio.get_event_loop()
 
-#madlib = btb.MadLibs(random = True, text='One time {0} said to me {1}, what a joker {0} was', title='joke', variables = ['Person', 'Joke'])
-
-#print(madlib.raw())
-
-
-st = btb.SpeedText()
-st.image().save('speedtext.png')
-print(st.text())
+try:
+    loop.run_until_complete(test())
+finally:
+    loop.close()
