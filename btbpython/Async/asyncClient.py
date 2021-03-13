@@ -1,47 +1,36 @@
-import asyncio, aiohttp, json
+"""
+import requests
+from typing import Union
+from .madlibs import madlibs
+from .lyrics import lyrics as lyric
+
+from .text import Text as text
+from .reddit import reddit
+from .meme import meme"""
+from .asyncWord import word as w
+import asyncio
 
 class asyncClient:
-    def __init__(self, token:str):
-        self.settings = {"headers":{"Authorization": token}}
-        self.BASE = "https://api.bytestobits.dev"
+  def __init__(self, token:str):
+      self.token = {"Authorization": token}
 
-    async def create_request(self, endpoint, **kwargs):
-        url = self.BASE + endpoint +"?" + '&'.join(f"{i}={kwargs[i]}" for i in kwargs)
+  async def word(self):
+      return await w(token=self.token)
 
-        async with aiohttp.ClientSession() as session:
-            async with session.get(url, **self.settings) as request:
-                return await request.text()
+"""
 
-    async def word(self):
-        _data = json.loads(await self.create_request("/word"))
-        return _data
+  def lyrics(self, song: str, artist: str = None):
+      return lyric(song=song, artist=artist, token=self.token)
 
-    async def madlibs(self):
-        _data = json.loads(await self.create_request("/madlibs"))
-        return _data
+  def MadLibs(self, random:bool=True, title:str=None, variables:Union[tuple, list]=None, text:str=None, questions:int=None):
+      return madlibs(random=random, title=title, variables=variables, text=text, questions=questions, token = self.token)
 
-    async def text(self):
-        _data = await self.create_request("/text")
-        return _data
+  def Text(self):
+      return text(token = self.token)
 
-    async def meme(self):
-        _data = json.loads(await self.create_request("/meme"))
-        return _data
+  def Reddit(self, subreddit:str, limit:int=1):
+      return reddit(subreddit=subreddit, limit=limit, token = self.token)
 
-    async def lyrics(self, song, artist=None):
-        _params = {
-            "song": song
-        }
-        if artist:
-            _params["artist"] = artist
-        _data = json.loads(await self.create_request("/lyrics", **_params))
-        return _data
-
-    async def reddit(self, subreddit, limit=None):
-        _params = {
-            "subreddit": subreddit
-        }
-        if limit:
-            _params["limit"] = limit
-        _data = json.loads(await self.create_request("/reddit", **_params))
-        return _data
+  def Meme(self):
+      return meme(token=self.token)
+"""
