@@ -21,7 +21,7 @@ class Text:
 
         img = Image.new('RGB', (600, (len(lines) * 25 + 15)), backgroundColor)
         draw = ImageDraw.Draw(img)
-        font = ImageFont.truetype("./font/arial.ttf", 20)
+        font = ImageFont.truetype("../font/arial.ttf", 20)
 
 
 

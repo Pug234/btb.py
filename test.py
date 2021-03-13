@@ -1,6 +1,13 @@
-import btbpython
-client = btbpython.client("43ha.NfmK1rhf1EUyVhZ4MWPO")
+import btbpython, asyncio
+client = btbpython.asyncClient("")
 
-for i in range(100):
+async def test():
+    word = await client.word()
+    print(word)
 
-    print(client.Text().text)
+loop = asyncio.get_event_loop()
+
+try:
+    loop.run_until_complete(test())
+finally:
+    loop.close()
