@@ -14,6 +14,3 @@ def lyrics(token, song: str, artist: str = None):
 
   if song == {"GeniusError": "Not Found"}:
       raise TypeError("GeniusError: Song not found")
-
-
-  return song

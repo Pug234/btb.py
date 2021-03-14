@@ -1,4 +1,4 @@
-import btbpython, asyncio
+import btbpython
 client = btbpython.client("43ha.NfmK1rhf1EUyVhZ4MWPO")
 
-print(client.lyrics())
+print(client.lyrics(song='My play'))
