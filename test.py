@@ -1,5 +1,5 @@
 import btbpython, asyncio
-client = btbpython.asyncClient("API_TOKEN")
+client = btbpython.asyncClient("43ha.NfmK1rhf1EUyVhZ4MWPO")
 
 async def test():
     word = await client.word()
