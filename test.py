@@ -1,4 +1,4 @@
 import btbpython
-client = btbpython.client("43ha.NfmK1rhf1EUyVhZ4MWPO")
+client = btbpython.client("")
 
-print(client.lyrics(song='My play'))
+print(client.MadLibs().questionList())
