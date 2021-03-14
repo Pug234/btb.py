@@ -1,21 +1,30 @@
 import requests
 from typing import Union
-from .madlibs import madlibs
-from .lyrics import lyrics as lyric
-from .word import word as w
-from .text import Text as text
-from .reddit import reddit
-from .meme import meme
+
 
 class client:
   def __init__(self, token:str):
       self.token = {"Authorization": token}
 
+    def lyrics(token, song: str, artist: str = None):
+      song = song.replace(" ", "+")
+
+      song = f'https://api.bytestobits.dev/lyrics/?song={song}'
+
+      if artist != None:
+          artist = artist.replace(" ", "+")
+          song += f'&artist={artist}'
+
+      song = request(song, token)
+
+      if song == {"GeniusError": "Not Found"}:
+          raise TypeError("GeniusError: Song not found")
+
+      return song
+
   def word(self):
       return w(token=self.token)
 
-  def lyrics(self, song: str, artist: str = None):
-      return lyric(song=song, artist=artist, token=self.token)
 
   def MadLibs(self, random:bool=True, title:str=None, variables:Union[tuple, list]=None, text:str=None, questions:int=None):
       return madlibs(random=random, title=title, variables=variables, text=text, questions=questions, token = self.token)
@@ -28,3 +37,11 @@ class client:
 
   def Meme(self):
       return meme(token=self.token)
+
+def request(url, token):
+    r = requests.get(url, headers=token)
+
+    if r.status_code == 429:
+      raise Exception(f'API response: {r.status_code}: To many request')
+
+    return r.json()
