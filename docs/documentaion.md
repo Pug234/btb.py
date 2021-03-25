@@ -185,15 +185,27 @@ finally:
 ```
 
 The async module supports
+
 `await client.word()`
+
 Returns a random word
+
 `await client.text()`
+
 Returns a paragraph of random text
+
 `await client.reddit(subreddit:str, limit:int=None)`
+
 Returns a list with a for each dictionary post that includes title, url, image link, subreddit name, upvotes, downvotes, amount of comments, and text.
+
 `await client.meme()`
+
 Returns a dictionary that includes title, url, image link, subreddit name, upvotes, downvotes, amount of comments, and text.
+
 `await client.info()`
+
 Returns a dictionary that includes, current amount of request to the API, max amount of request allowed, and time until amount of request reset in seconds
+
 `await client.lyrics(song:str, artist:str=None)`
-Returns a dictionary that includes the title of the song, the artist of the song, and the lyrics to the song. 
+
+Returns a dictionary that includes the title of the song, the artist of the song, and the lyrics to the song.
