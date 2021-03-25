@@ -45,3 +45,7 @@ class asyncClient:
             _params["limit"] = limit
         _data = json.loads(await self.create_request("/reddit", **_params))
         return _data
+
+    async def info(self):
+        _data = await self.create_request("/info")
+        return _data

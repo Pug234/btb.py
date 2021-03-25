@@ -1,10 +1,10 @@
 import btbpython, asyncio
-client = btbpython.asyncClient("Gww3.XPWIDQAdahXyNXsGn0Xw")
-c = btbpython.client("Gww3.XPWIDQAdahXyNXsGn0Xw")
+client = btbpython.asyncClient("")
+c = btbpython.client("")
 
 async def test():
-    song = await client.Lyrics('my play')
-    print(await song.raw())
+    print(await client.meme())
+
 loop = asyncio.get_event_loop()
 
 try:
