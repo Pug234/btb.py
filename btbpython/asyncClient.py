@@ -7,7 +7,7 @@ class asyncClient:
 
     async def create_request(self, endpoint, **kwargs):
         url = self.BASE + endpoint +"?" + '&'.join(f"{i}={kwargs[i]}" for i in kwargs)
-
+ 
         async with aiohttp.ClientSession() as session:
             async with session.get(url, **self.settings) as request:
                 return await request.text()

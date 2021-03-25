@@ -3,6 +3,17 @@ from typing import Union
 from PIL import Image, ImageFont
 from typing import Union
 
+def request(url, token):
+    r = requests.get(url, headers=token)
+
+
+    if r.status_code == 429:
+      raise Exception(f'API response: {r.status_code}: To many request')
+
+
+    return r.json()
+
+
 class client:
     def __init__(self, token):
       self.token = {"Authorization": token}
@@ -37,6 +48,9 @@ class client:
 
     def Meme(self):
       return meme(token=self.token)
+
+    def Info(self):
+      return info(token=self.token)
 
 class text:
     def __init__(self, token):
@@ -141,6 +155,8 @@ class meme:
     def raw(self):
         return self.r
 
+
+
 class reddit:
     def __init__(self, token, subreddit:str, limit:int=1):
         self.r = request(f"https://api.bytestobits.dev/reddit/?subreddit={subreddit}&limit={limit}", token)
@@ -154,12 +170,21 @@ class reddit:
     def post(self, index:int):
         return self.r[index]
 
-def request(url, token):
-    r = requests.get(url, headers=token)
+class info:
+    def __init__(self, token):
+        self.request = request(f"https://api.bytestobits.dev/info/", token)
 
+    @property
+    def used():
+        return self.request['used']
 
-    if r.status_code == 429:
-      raise Exception(f'API response: {r.status_code}: To many request')
+    @property
+    def limit():
+        return self.request['limit']
 
+    @property
+    def untill_reset():
+        return self.request['next_reset']
 
-    return r.json()
+    def raw():
+        return self.request
