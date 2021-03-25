@@ -26,10 +26,22 @@ Returns a random word as a string.
 
 
 `
-  btbpython.client().lyrics(song, artist)
+  class btbpython.client().Lyrics(song, artist)
 `
 
-Returns the lyrics to a song as a string.
+Returns information about a song
+
+`title`
+Returns the title of the song as a string
+
+`artist`
+Returns the name of the songs artist as a string
+
+`lyrics`
+Returns the lyrics of the song as a string
+
+`raw()`
+Returns a dictionary with all the information as gotten from the API
 
 **Parameters**
  - song[str] The title of the song
@@ -39,7 +51,7 @@ Returns the lyrics to a song as a string.
 
 
 `
-  class btbpython.client().SpeedText()
+  class btbpython.client().Text()
 `
 
 Represents a random paragraph of text
@@ -48,13 +60,13 @@ Represents a random paragraph of text
   text
 `
 
-Returns the contents of SpeedText() as a string
+Returns the contents of Text() as a string
 
 `
   image(text, backgroundColor, textColor)
 `
 
-Returns the contents of SpeedText() as an image
+Returns the contents of Text() as an image
 
 **Parameters**
  - text(Optional[str]) Overrides the random text and replaces it with inputted text.
@@ -87,7 +99,7 @@ Returns the madlibs with all of the questions({number}) filled out
 
 ## reddit
 
-`class btbpython.client().reddit(subreddit, limit)`
+`class btbpython.client().Reddit(subreddit, limit)`
 
 Represents a list of reddit posts
 
@@ -108,7 +120,7 @@ Returns one post from the list
 
 ## meme
 
-`class btbpython.client().meme()`
+`class btbpython.client().Meme()`
 
 Represents a random meme
 
@@ -131,3 +143,21 @@ Returns the score of the reddit post the meme is from as a list (Ex: [upvotes, d
 
 `raw()`
 Returns the information from the API as a dictionary
+
+## info
+
+`class btbpthon.client().Info`
+
+Info bout the provided token
+
+`used`
+Returns the amount of request made in the last 60 seconds
+
+`limit`
+Returns the max amount of uses allowed in 60 seconds (returns none if the token has no limits)
+
+`next_reset`
+Returns the mount of time untill the token uses resets in seconds
+
+`raw()`
+Returns a dictionary with all the information as gotten from the API

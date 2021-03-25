@@ -18,21 +18,8 @@ class client:
     def __init__(self, token):
       self.token = {"Authorization": token}
 
-    def lyrics(self, song: str, artist: str = None):
-      song = song.replace(" ", "+")
-
-      song = f'https://api.bytestobits.dev/lyrics/?song={song}'
-
-      if artist != None:
-          artist = artist.replace(" ", "+")
-          song += f'&artist={artist}'
-
-      song = request(song, self.token)
-
-      if song == {"GeniusError": "Not Found"}:
-          raise TypeError("GeniusError: Song not found")
-
-      return song
+    def Lyrics(self, song: str, artist: str = None):
+      return lyrics(song, artist, token=self.token)
 
     def word(self):
         return request("https://api.bytestobits.dev/word", self.token)
@@ -175,16 +162,47 @@ class info:
         self.request = request(f"https://api.bytestobits.dev/info/", token)
 
     @property
-    def used():
-        return self.request['used']
+    def used(self):
+        return self.request['uses']
 
     @property
-    def limit():
+    def limit(self):
         return self.request['limit']
 
     @property
-    def untill_reset():
+    def next_reset(self):
         return self.request['next_reset']
 
-    def raw():
+    def raw(self):
         return self.request
+
+class lyrics:
+    def __init__(self, song, artist, token):
+        song = song.replace(" ", "+")
+
+        song = f'https://api.bytestobits.dev/lyrics/?song={song}'
+
+        if artist != None:
+            artist = artist.replace(" ", "+")
+            song += f'&artist={artist}'
+
+        self.song = request(song, token)
+
+        if song == {"GeniusError": "Not Found"}:
+            raise TypeError("GeniusError: Song not found")
+
+
+    @property
+    def title(self):
+        return self.song['title']
+
+    @property
+    def artist(self):
+        return self.song['artist']
+
+    @property
+    def lyrics(self):
+        return self.song['lyrics']
+
+    def raw(self):
+        return self.song
