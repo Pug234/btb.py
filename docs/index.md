@@ -12,7 +12,7 @@ First things first you will need a API token go to https://api.bytestobits.dev/a
 
 To install btbpug from PyPI use
 
-`python3 -m pip install -U discord.py`
+`python3 -m pip install btbpython`
 
 
 ### Usage
